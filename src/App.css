@@ -30,7 +30,6 @@ html {
 
 aside {
   width: 25%;
-
   background-color: orange;
   height: 100%;
   position: fixed;
@@ -93,6 +92,16 @@ section {
   height: 100dvh;
   padding-left: 30%;
 }
-#intro {
-  background-color: bisque;
+
+#landing {
+  display: grid;
+  grid-template-areas: "landingText gif";
+}
+
+#landingtext {
+  grid-area: landingText;
+}
+
+#gif {
+  grid-area: gif;
 }
