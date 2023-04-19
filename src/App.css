@@ -39,7 +39,7 @@ aside {
   height: 100%;
   position: fixed;
 }
-nav {
+aside > nav {
   height: 100%;
   min-height: 100svh;
   min-height: 100dvh;
@@ -51,7 +51,7 @@ nav {
   align-items: center;
 }
 
-a {
+aside > a {
   display: flex;
   width: 100%;
   height: 100%;
@@ -110,3 +110,53 @@ section {
   border-radius: 10%;
   box-shadow: 5px 10px #2c1a4e;
 }
+/*Landing stuff*/
+
+/*Project stuff*/
+#projects {
+  display: grid;
+  grid-template-rows: 5% auto auto 5%;
+  grid-template-areas:
+    "title title title "
+    "project-1 project-1 project-1"
+    "project-2 project-3 project-4";
+  gap: 1rem;
+  grid-auto-rows: auto;
+}
+
+#projects > h1 {
+  text-align: center;
+  grid-area: title;
+  border-bottom: 2px solid darkgrey;
+}
+
+#project-1 {
+  grid-area: project-1;
+}
+#project-2 {
+  grid-area: project-2;
+}
+#project-3 {
+  grid-area: project-3;
+}
+#project-4 {
+  grid-area: project-4;
+}
+
+.project {
+  background-color: gray;
+  border: red 2px solid;
+}
+
+@media (max-width: 40em) {
+  #projects {
+    grid-template-rows: 10% 2fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "title "
+      "project-1"
+      "project-2"
+      "project-3"
+      "project-4";
+  }
+}
+/*Project stuff*/
