@@ -1,5 +1,6 @@
 import "./App.css";
 import giphy from "./assets/gifs/giphy.gif";
+import { ProjectCard } from "./components/ProjectCard";
 function App() {
   return (
     <>
@@ -34,10 +35,14 @@ function App() {
         </section>
         <section id="projects">
           <h1>Selected Projects</h1>
-          <article className="project">1</article>
-          <article className="project">2</article>
-          <article className="project">3</article>
-          <article className="project">4</article>
+          {/* Fine for mocking, remember to use a valid key and to use some kind of data structure*/}
+          {[1, 2, 3, 4].map((value, index) => {
+            return (
+              <ProjectCard key={index + 1} projectId={index + 1}>
+                {index + 1}
+              </ProjectCard>
+            );
+          })}
         </section>
         <section id="skills">skills</section>
         <section id="contact">contact</section>
