@@ -1,19 +1,44 @@
 import "./App.css";
-
+import giphy from "./assets/gifs/giphy.gif";
 function App() {
   return (
     <>
-      <aside>
-        <nav>
-          <a href="#landing">Landing</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </aside>
       <main>
-        <section id="landing"></section>
-        <section id="projects">projects</section>
+        <section id="landing">
+          <article id="landingTextArea">
+            <h1>Lucas Goldental</h1>
+            <p>
+              Student Dev
+              <span>Problem Solver</span>
+            </p>
+            <p id="descriptionLanding">
+              My name is Lucas, i am a
+              <span id="landingAsideText">
+                <span className="Typewriter__wrapper">
+                  Selftaught C1 English User
+                </span>
+                <span className="Typewriter__cursor">|</span>
+              </span>
+              from Argentina.
+              <br />
+              According to some function in scripts.js, i am
+              <span id="landingAgeText"> 30</span> years old. I am currently
+              diving into Coding. I have also dabbled in Game Development and
+              Human Resources. My goal and focus is becoming a Javascript
+              Developer.
+            </p>
+          </article>
+          <article id="gifArea">
+            <img src={giphy} alt="loading..." />
+          </article>
+        </section>
+        <section id="projects">
+          <h1>Selected Projects</h1>
+          <article className="project">1</article>
+          <article className="project">2</article>
+          <article className="project">3</article>
+          <article className="project">4</article>
+        </section>
         <section id="skills">skills</section>
         <section id="contact">contact</section>
       </main>

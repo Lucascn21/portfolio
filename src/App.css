@@ -26,8 +26,13 @@ html {
     " main"
     " footer";
   grid-template-columns: auto;
+  z-index: -1;
+  background-image: url("./assets/backgrounds/16245680689844.png");
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
 }
 
+/*Nav stuff*/
 aside {
   width: 25%;
   background-color: orange;
@@ -53,35 +58,13 @@ a {
   justify-content: center;
   align-items: center;
 }
+/*Nav stuff*/
 
-a:nth-child(1) {
-  background-color: gray;
-}
-a:nth-child(2) {
-  background-color: green;
-}
-a:nth-child(3) {
-  background-color: darkolivegreen;
-}
-a:nth-child(4) {
-  background-color: palevioletred;
-}
-
-section:nth-child(1) {
-  background-color: gray;
-}
-section:nth-child(2) {
-  background-color: green;
-}
-section:nth-child(3) {
-  background-color: darkolivegreen;
-}
-section:nth-child(4) {
-  background-color: palevioletred;
-}
+/*Layout stuff*/
 main {
   grid-area: main;
-  background-color: darkgray;
+  margin-left: clamp(10%, 15%, 20%);
+  margin-right: clamp(10%, 15%, 20%);
 }
 footer {
   grid-area: footer;
@@ -90,18 +73,40 @@ footer {
 section {
   height: 100svh;
   height: 100dvh;
-  padding-left: 30%;
 }
+/*Layout stuff*/
 
+/*Landing stuff*/
 #landing {
-  display: grid;
-  grid-template-areas: "landingText gif";
+  display: flex;
+  align-items: center;
+  justify-items: center;
 }
 
-#landingtext {
-  grid-area: landingText;
+@media (max-width: 40em) {
+  #landing {
+    flex-wrap: wrap-reverse;
+  }
+  main {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
 
-#gif {
-  grid-area: gif;
+#landing > article {
+  width: 100%;
+}
+
+#landingTextArea {
+  grid-area: landingTextArea;
+}
+
+#gifArea {
+  grid-area: gifArea;
+}
+
+#gifArea > img {
+  width: 100%;
+  border-radius: 10%;
+  box-shadow: 5px 10px #2c1a4e;
 }
