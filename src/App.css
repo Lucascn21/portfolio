@@ -1,15 +1,25 @@
 :root {
-  --ff-primary: "Roboto", sans-serif;
+  --ff-primary: "Heebo", sans-serif;
   --ff-accent: "Playfair Display", serif;
+  --ff-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 body {
-  font-family: var(--ff-primary);
-  font-weight: 400;
+  font-family: var(--ff-sans-serif);
+  /*
+  font-weight: 200;
   font-size: 1.3125rem;
   line-height: 1.6;
+  */
   margin: 0;
   color: white;
+}
+@media (max-width: 40em) {
+  body {
+    font-size: initial;
+  }
 }
 
 h1,
@@ -111,7 +121,9 @@ section {
     margin-right: 10%;
   }
 }
-
+#landingAsideText {
+  color: #4691f6 !important;
+}
 #landing > article {
   width: 100%;
 }
@@ -119,7 +131,16 @@ section {
 #landingTextArea {
   grid-area: landingTextArea;
 }
-
+#landingTextArea > h1 {
+  font-size: xx-large;
+}
+#landingTextArea > p:nth-child(2) {
+  font-size: xx-large;
+}
+#landingTextArea > p:nth-child(2) > span {
+  font-size: initial;
+  color: #6c757d;
+}
 #gifArea {
   grid-area: gifArea;
 }
@@ -181,6 +202,11 @@ section {
 /*Project stuff*/
 
 /*Skills stuff*/
+@media (max-width: 40em) {
+  #skillsSection {
+    padding-top: 1rem;
+  }
+}
 #skillsSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -193,7 +219,6 @@ section {
 #skillsSection > #coursesAndProjects > button {
   text-align: center;
   border-radius: 8px;
-
   padding: 4px 10px;
   margin: 4px;
   cursor: pointer;
@@ -236,15 +261,56 @@ section {
 #about {
   max-width: 100svw;
   word-wrap: break-word;
+  height: fit-content;
 }
 @media (max-width: 40em) {
-  #about > * > p {
-    word-wrap: break-word;
+  #about {
+    height: fit-content;
+  }
+  #about > h3,
+  h4,
+  h2 {
+    text-align: center;
+    border-bottom: inset 1px gray;
   }
 }
+#about > h3,
+h2 {
+  text-align: center;
+  border-bottom: inset 1px gray;
+}
 
-#about > * > p > span {
+#about > h2 {
+  text-align: center;
+  border-bottom: outset 5px #5dcbcb;
+}
+#about > p {
+  word-wrap: break-word;
+  padding-left: 0.6rem;
+}
+#about > h3,
+h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#about > p > span {
   color: #6c757d;
+}
+
+.bolder {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  font-weight: bolder;
+}
+
+.bolder > p {
+  padding-left: 0.5rem;
+}
+
+.italic {
   font-style: italic;
 }
 
