@@ -9,6 +9,7 @@ body {
   font-size: 1.3125rem;
   line-height: 1.6;
   margin: 0;
+  color: white;
 }
 
 h1,
@@ -30,6 +31,23 @@ html {
   background-image: url("./assets/backgrounds/16245680689844.png");
   background-position: right bottom, left top;
   background-repeat: no-repeat, repeat;
+}
+/*Link reset*/
+a:link,
+a:hover {
+  color: #eee;
+  text-decoration: none;
+}
+
+a:visited,
+a:hover {
+  color: #eee;
+  text-decoration: none;
+}
+
+a:hover,
+a:hover {
+  text-decoration: none;
 }
 
 /*Nav stuff*/
@@ -63,8 +81,8 @@ aside > a {
 /*Layout stuff*/
 main {
   grid-area: main;
-  margin-left: clamp(10%, 15%, 20%);
-  margin-right: clamp(10%, 15%, 20%);
+  margin-left: clamp(10%, 20%, 25%);
+  margin-right: clamp(10%, 20%, 25%);
 }
 footer {
   grid-area: footer;
@@ -143,11 +161,6 @@ section {
   grid-area: project-4;
 }
 
-.project {
-  background-color: gray;
-  border: red 2px solid;
-}
-
 @media (max-width: 40em) {
   #projects {
     grid-template-rows: 10% 2fr 1fr 1fr 1fr;
@@ -157,6 +170,37 @@ section {
       "project-2"
       "project-3"
       "project-4";
+    height: fit-content;
+  }
+
+  #projects > h1 {
+    align-self: center;
   }
 }
 /*Project stuff*/
+
+/*Skills stuff*/
+#skillsSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 40em) {
+  #skillsSection {
+    height: fit-content;
+  }
+  #skillsSection > * > h4 {
+    text-align: center;
+    margin: 0;
+  }
+}
+#skillsSection > * > h4 {
+  border-bottom: 1px solid whitesmoke;
+  margin: 0;
+}
+
+#skills {
+  border-right: 1px solid whitesmoke;
+}
+#coursesAndProjects {
+}
+/*Skills stuff*/

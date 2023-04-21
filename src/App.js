@@ -44,7 +44,50 @@ function App() {
             );
           })}
         </section>
-        <section id="skills">skills</section>
+        <section id="skillsSection">
+          <article id="skills">
+            <h4>Languages</h4>
+            <button>Javascript</button>
+            <button>Java</button>
+            <button>SQL</button>
+            <button>C C++ C#</button>
+            <h4>Frameworks &amp; Libraries</h4>
+            <button>NodeJs</button>
+            <button>Express</button>
+            <button>Bootstrap</button>
+            <button>Axios</button>
+            <button>Handlebars</button>
+            <h4>Cloud</h4>
+            <button>MongoAtlas</button>
+            <button>Netlify</button>
+            <h4>Principles</h4>
+            <button>PWA</button>
+            <button>REST</button>
+            <button>MVC</button>
+            <button>OOP</button>
+            <h4>Web Dev</h4>
+            <button>CSS3</button>
+            <button>HTML5</button>
+            <button>FIGMA</button>
+            <h4>DBMS</h4>
+            <button>MongoDB</button>
+            <button>MySQL</button>
+            <h4>ORM</h4>
+            <button>Sequelize</button>
+            <h4>Project Management</h4>
+            <button>Git</button>
+            <button>GitHub</button>
+            <button>Scrum</button>
+            <button>Trello</button>
+            <button>UML</button>
+          </article>
+          <article id="coursesAndProjects">
+            <h4>Courses</h4>
+            <button>CoderHouse</button>
+            <h4>Projects</h4>
+            <button>AnotherBookStore</button>
+          </article>
+        </section>
         <section id="contact">contact</section>
       </main>
       <footer>footer</footer>
