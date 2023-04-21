@@ -184,6 +184,32 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+#skillsSection > * > button {
+  color: #fff;
+  background-color: #212529;
+  border-color: #212529;
+}
+#skillsSection > #coursesAndProjects > button {
+  text-align: center;
+  border-radius: 8px;
+
+  padding: 4px 10px;
+  margin: 4px;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    rgb(73, 140, 82) 20%,
+    rgb(37, 37, 48) 50%
+  );
+}
+#skillsSection > #skills > button {
+  text-align: center;
+  border-radius: 8px;
+  background-color: rgb(37, 37, 48);
+  padding: 4px 10px;
+  margin: 4px;
+  cursor: pointer;
+}
 @media (max-width: 40em) {
   #skillsSection {
     height: fit-content;

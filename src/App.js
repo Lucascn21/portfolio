@@ -1,5 +1,6 @@
 import "./App.css";
 import giphy from "./assets/gifs/giphy.gif";
+import { Button } from "./components/Button";
 import { ProjectCard } from "./components/ProjectCard";
 function App() {
   return (
@@ -84,11 +85,12 @@ function App() {
           <article id="coursesAndProjects">
             <h4>Courses</h4>
             <button>CoderHouse</button>
+            <Button></Button>
             <h4>Projects</h4>
             <button>AnotherBookStore</button>
           </article>
         </section>
-        <section id="contact">contact</section>
+        <section id="about">about</section>
       </main>
       <footer>footer</footer>
     </>
