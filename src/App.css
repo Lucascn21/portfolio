@@ -85,6 +85,7 @@ main {
   margin-right: clamp(10%, 20%, 25%);
 }
 footer {
+  width: fit-content;
   grid-area: footer;
 }
 
@@ -227,6 +228,24 @@ section {
 #skills {
   border-right: 1px solid whitesmoke;
 }
-#coursesAndProjects {
-}
+
 /*Skills stuff*/
+
+/*About Stuff*/
+
+#about {
+  max-width: 100svw;
+  word-wrap: break-word;
+}
+@media (max-width: 40em) {
+  #about > * > p {
+    word-wrap: break-word;
+  }
+}
+
+#about > * > p > span {
+  color: #6c757d;
+  font-style: italic;
+}
+
+/*About Stuff*/

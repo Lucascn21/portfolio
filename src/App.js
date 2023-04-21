@@ -21,9 +21,7 @@ function App() {
                 </span>
                 <span className="Typewriter__cursor">|</span>
               </span>
-              from Argentina.
-              <br />
-              According to some function in scripts.js, i am
+              from Argentina. According to some function in scripts.js, i am
               <span id="landingAgeText"> 30</span> years old. I am currently
               diving into Coding. I have also dabbled in Game Development and
               Human Resources. My goal and focus is becoming a Javascript
@@ -90,7 +88,14 @@ function App() {
             <button>AnotherBookStore</button>
           </article>
         </section>
-        <section id="about">about</section>
+        <section id="about">
+          <article id="aboutMe">
+            <h2>asdadasddsada</h2>
+            <p>
+              asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdaasdasdasdadssadadadsadasdsadsadsadsdasdasdasdasdasdasdasdasdasdaasdasdasdadssadadadsadasdsadsadsadsdasdasdasdasdasdasdasdasdasdaasdasdasdadssadadadsadasdsadsadsadsdasdasdasdasdaasdasdasdadssadadadsadasdsadsadsad
+            </p>
+          </article>
+        </section>
       </main>
       <footer>footer</footer>
     </>
