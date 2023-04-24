@@ -116,9 +116,16 @@ section {
 #landingTextArea > p:nth-child(2) {
   font-size: xx-large;
 }
-#landingTextArea > p:nth-child(2) > span {
+#landingTextArea > p:nth-child(2) > span,
+#descriptionLanding > span {
   font-size: initial;
   color: #6c757d;
+
+}
+#descriptionLanding > span {
+  font-size: initial;
+  color: #6c757d;
+  font-size: smaller;
 }
 #gifArea {
   grid-area: gifArea;

@@ -30,9 +30,9 @@ function App() {
                 <TypewriterLine />
               </span>
               &nbsp;from Argentina.
-              <br /> According to some function in the app, i am
-              <span id="landingAgeText"> {getAge("1992-08-02")}</span> years
-              old.
+              <br />I am&nbsp;
+              {getAge("1992-08-02")} years old.
+              <span>&nbsp; According to some function in the app</span>
               <br />
               I am currently diving into coding. I have also dabbled in Game
               Development and Human Resources.
