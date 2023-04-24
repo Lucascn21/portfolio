@@ -16,7 +16,7 @@ body {
   margin: 0;
   color: white;
 }
-@media (max-width: 40em) {
+@media (max-width: 75em) {
   body {
     font-size: initial;
   }
@@ -90,7 +90,7 @@ section {
   justify-items: center;
 }
 
-@media (max-width: 40em) {
+@media (max-width: 75em) {
   #landing {
     flex-wrap: wrap-reverse;
   }
@@ -120,7 +120,6 @@ section {
 #descriptionLanding > span {
   font-size: initial;
   color: #6c757d;
-
 }
 #descriptionLanding > span {
   font-size: initial;
@@ -169,7 +168,7 @@ section {
   grid-area: project-4;
 }
 
-@media (max-width: 40em) {
+@media (max-width: 75em) {
   #projects {
     grid-template-rows: 10% 2fr 1fr 1fr 1fr;
     grid-template-areas:
@@ -188,7 +187,7 @@ section {
 /*Project stuff*/
 
 /*Skills stuff*/
-@media (max-width: 40em) {
+@media (max-width: 75em) {
   #skillsSection {
     padding-top: 3rem;
   }
@@ -222,7 +221,7 @@ section {
   margin: 4px;
   cursor: pointer;
 }
-@media (max-width: 40em) {
+@media (max-width: 75em) {
   #skillsSection {
     height: fit-content;
   }
@@ -249,7 +248,7 @@ section {
   word-wrap: break-word;
   height: fit-content;
 }
-@media (max-width: 40em) {
+@media (max-width: 75em) {
   #about {
     height: fit-content;
   }
@@ -343,7 +342,7 @@ svg {
   background: rgb(30, 30, 49);
 }
 
-@media (max-width: 40em) {
+@media (max-width: 75em) {
   #verticalBar {
     display: none;
   }

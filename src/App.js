@@ -1,9 +1,15 @@
+import { createRef } from "react";
 import "./App.css";
 import giphy from "./assets/gifs/giphy.gif";
 import { Button } from "./components/Button";
 import { ProjectCard } from "./components/ProjectCard";
 import { TypewriterLine } from "./components/TypewriterLine";
+
 function App() {
+  const landingRef = createRef();
+  const projectsRef = createRef();
+  const skillsSectionRef = createRef();
+  const aboutRef = createRef();
   const yearInMs = 3.15576e10; // Using a year of 365.25 days (because leap years)
   const getAge = (birthDate) =>
     Math.floor((new Date() - new Date(birthDate).getTime()) / yearInMs);
@@ -17,7 +23,7 @@ function App() {
         <a href="#about">About</a>
       </aside>
       <main>
-        <section id="landing">
+        <section ref={landingRef} id="landing">
           <article id="landingTextArea">
             <h1>Lucas Goldental</h1>
             <p className="italic">
@@ -44,7 +50,7 @@ function App() {
             <img src={giphy} alt="loading..." />
           </article>
         </section>
-        <section id="projects">
+        <section ref={projectsRef} id="projects">
           <h1>Selected Projects</h1>
           {/* Fine for mocking, remember to use a valid key and to use some kind of data structure*/}
           {[1, 2, 3, 4].map((value, index) => {
@@ -55,7 +61,7 @@ function App() {
             );
           })}
         </section>
-        <section id="skillsSection">
+        <section ref={skillsSectionRef} id="skillsSection">
           <article id="skills">
             <h4>Languages</h4>
             <button>Javascript</button>
@@ -100,7 +106,7 @@ function App() {
             <button>AnotherBookStore</button>
           </article>
         </section>
-        <section id="about">
+        <section ref={aboutRef} id="about">
           <h2>About me</h2>
           <h3> Childhood</h3>
           <p>
