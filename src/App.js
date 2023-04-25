@@ -1,4 +1,4 @@
-import { createRef } from "react";
+import { createRef, useEffect, useState } from "react";
 import "./App.css";
 import giphy from "./assets/gifs/giphy.gif";
 import { Button } from "./components/Button";
@@ -10,17 +10,57 @@ function App() {
   const projectsRef = createRef();
   const skillsSectionRef = createRef();
   const aboutRef = createRef();
+  const refs = [landingRef, projectsRef, skillsSectionRef, aboutRef];
   const yearInMs = 3.15576e10; // Using a year of 365.25 days (because leap years)
   const getAge = (birthDate) =>
     Math.floor((new Date() - new Date(birthDate).getTime()) / yearInMs);
+  const [currentSection, setCurrentSection] = useState("landing");
+  let options = {
+    root: document.querySelector("main"),
+    rootMargin: "10%",
+    threshold: 1.0,
+  };
+  let callback = (entries, observer) => {
+    entries.forEach((entry) => {
+      setCurrentSection(entry.target.id);
+    });
+  };
+  useEffect(() => {
+    let observer = new IntersectionObserver(callback, options);
+    const mappedRefs = refs.map((ref) => ref.current);
+    for (const mappedRef of mappedRefs) {
+      observer.observe(mappedRef);
+    }
+  }, []);
+
   return (
     <>
       <aside id="asideRight">
         <div id="verticalBar"></div>
-        <a href="#landing">Landing</a>
-        <a href="#projects">Projects</a>
-        <a href="#skillsSection">Skills</a>
-        <a href="#about">About</a>
+        <a
+          className={currentSection === "landing" ? "highlighted" : null}
+          href="#landing"
+        >
+          Landing
+        </a>
+        <a
+          className={currentSection === "projects" ? "highlighted" : null}
+          href="#projects"
+        >
+          Projects
+        </a>
+        <a
+          className={currentSection === "skillsSection" ? "highlighted" : null}
+          href="#skillsSection"
+        >
+          Skills
+        </a>
+        <a
+          className={currentSection === "about" ? "highlighted" : null}
+          href="#about"
+        >
+          About
+        </a>
       </aside>
       <main>
         <section ref={landingRef} id="landing">
