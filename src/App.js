@@ -10,27 +10,26 @@ function App() {
   const projectsRef = createRef();
   const skillsSectionRef = createRef();
   const aboutRef = createRef();
-  const refs = [landingRef, projectsRef, skillsSectionRef, aboutRef];
+
   const yearInMs = 3.15576e10; // Using a year of 365.25 days (because leap years)
   const getAge = (birthDate) =>
     Math.floor((new Date() - new Date(birthDate).getTime()) / yearInMs);
+
   const [currentSection, setCurrentSection] = useState("landing");
-  let options = {
-    root: document.querySelector("main"),
-    rootMargin: "10%",
-    threshold: 1.0,
-  };
-  let callback = (entries, observer) => {
-    entries.forEach((entry) => {
-      setCurrentSection(entry.target.id);
-    });
-  };
+
   useEffect(() => {
-    let observer = new IntersectionObserver(callback, options);
-    const mappedRefs = refs.map((ref) => ref.current);
-    for (const mappedRef of mappedRefs) {
-      observer.observe(mappedRef);
-    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setCurrentSection(entry.target.id);
+        });
+      },
+      { threshold: [0.53, 0.75, 1] }
+    );
+    observer.observe(landingRef?.current);
+    observer.observe(projectsRef?.current);
+    observer.observe(skillsSectionRef?.current);
+    observer.observe(aboutRef?.current);
   }, []);
 
   return (
@@ -104,46 +103,44 @@ function App() {
         <section ref={skillsSectionRef} id="skillsSection">
           <article id="skills">
             <h4>Languages</h4>
-            <button>Javascript</button>
-            <button>Java</button>
-            <button>SQL</button>
-            <button>C C++ C#</button>
+            <Button text="Javascript" />
+            <Button text="Java" />
+            <Button text="SQL" />
+            <Button text="C C++ C#" />
             <h4>Frameworks &amp; Libraries</h4>
-            <button>NodeJs</button>
-            <button>Express</button>
-            <button>Bootstrap</button>
-            <button>Axios</button>
-            <button>Handlebars</button>
+            <Button text="NodeJs" />
+            <Button text="Express" />
+            <Button text="Bootstrap" />
+            <Button text="Axios" />
+            <Button text="Handlebars" />
             <h4>Cloud</h4>
-            <button>MongoAtlas</button>
-            <button>Netlify</button>
+            <Button text="MongoAtlas" />
+            <Button text="Netlify" />
             <h4>Principles</h4>
-            <button>PWA</button>
-            <button>REST</button>
-            <button>MVC</button>
-            <button>OOP</button>
+            <Button text="PWA" />
+            <Button text="REST" />
+            <Button text="MVC" />
+            <Button text="OOP" />
             <h4>Web Dev</h4>
-            <button>CSS3</button>
-            <button>HTML5</button>
-            <button>FIGMA</button>
+            <Button text="CSS3" />
+            <Button text="HTML5" />
+            <Button text="FIGMA" />
             <h4>DBMS</h4>
-            <button>MongoDB</button>
-            <button>MySQL</button>
+            <Button text="MongoDB" />
+            <Button text="MySQL" />
             <h4>ORM</h4>
-            <button>Sequelize</button>
+            <Button text="Sequelize" />
             <h4>Project Management</h4>
-            <button>Git</button>
-            <button>GitHub</button>
-            <button>Scrum</button>
-            <button>Trello</button>
-            <button>UML</button>
+            <Button text="Git" />
+            <Button text="GitHub" />
+            <Button text="Scrum" />
+            <Button text="Trello" />
           </article>
           <article id="coursesAndProjects">
             <h4>Courses</h4>
-            <button>CoderHouse</button>
-            <Button></Button>
+            <Button text="CoderHouse" />
             <h4>Projects</h4>
-            <button>AnotherBookStore</button>
+            <Button text="AnotherBookStore" />
           </article>
         </section>
         <section ref={aboutRef} id="about">

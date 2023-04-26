@@ -249,9 +249,6 @@ section {
   height: fit-content;
 }
 @media (max-width: 75em) {
-  #about {
-    height: fit-content;
-  }
   #about > h3,
   h4,
   h2 {
