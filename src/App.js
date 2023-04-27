@@ -1,9 +1,9 @@
 import { createRef, useEffect, useState } from "react";
 import "./App.css";
 import giphy from "./assets/gifs/giphy.gif";
-import { Button } from "./components/Button";
 import { ProjectCard } from "./components/ProjectCard";
 import { TypewriterLine } from "./components/TypewriterLine";
+import { techButtons, coursesButton, projectsButton } from "./data/data";
 
 function App() {
   const landingRef = createRef();
@@ -16,6 +16,22 @@ function App() {
     Math.floor((new Date() - new Date(birthDate).getTime()) / yearInMs);
 
   const [currentSection, setCurrentSection] = useState("landing");
+  const [selectedTechArray, setSelectedTechArray] = useState([]);
+
+  const addOrRemoveTech = (selectedTech) => {
+    if (selectedTechArray.includes(selectedTech)) {
+      const techInArray =
+        selectedTechArray[selectedTechArray.indexOf(selectedTech)];
+      let filteredTechArray = selectedTechArray.filter((element) => {
+        return element !== techInArray;
+      });
+      setSelectedTechArray(filteredTechArray);
+    } else {
+      let tempTechArray = [...selectedTechArray];
+      tempTechArray.push(selectedTech);
+      setSelectedTechArray(tempTechArray);
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -103,44 +119,27 @@ function App() {
         <section ref={skillsSectionRef} id="skillsSection">
           <article id="skills">
             <h4>Languages</h4>
-            <Button text="Javascript" />
-            <Button text="Java" />
-            <Button text="SQL" />
-            <Button text="C C++ C#" />
+            {techButtons("Lang", addOrRemoveTech, selectedTechArray)}
             <h4>Frameworks &amp; Libraries</h4>
-            <Button text="NodeJs" />
-            <Button text="Express" />
-            <Button text="Bootstrap" />
-            <Button text="Axios" />
-            <Button text="Handlebars" />
+            {techButtons("Lib", addOrRemoveTech)}
             <h4>Cloud</h4>
-            <Button text="MongoAtlas" />
-            <Button text="Netlify" />
+            {techButtons("Cloud", addOrRemoveTech)}
             <h4>Principles</h4>
-            <Button text="PWA" />
-            <Button text="REST" />
-            <Button text="MVC" />
-            <Button text="OOP" />
+            {techButtons("Principles", addOrRemoveTech)}
             <h4>Web Dev</h4>
-            <Button text="CSS3" />
-            <Button text="HTML5" />
-            <Button text="FIGMA" />
+            {techButtons("WebDev", addOrRemoveTech)}
             <h4>DBMS</h4>
-            <Button text="MongoDB" />
-            <Button text="MySQL" />
+            {techButtons("DBMS", addOrRemoveTech)}
             <h4>ORM</h4>
-            <Button text="Sequelize" />
+            {techButtons("ORM", addOrRemoveTech)}
             <h4>Project Management</h4>
-            <Button text="Git" />
-            <Button text="GitHub" />
-            <Button text="Scrum" />
-            <Button text="Trello" />
+            {techButtons("Project Management", addOrRemoveTech)}
           </article>
           <article id="coursesAndProjects">
             <h4>Courses</h4>
-            <Button text="CoderHouse" />
+            {coursesButton("Course 1", selectedTechArray)}
             <h4>Projects</h4>
-            <Button text="AnotherBookStore" />
+            {projectsButton("Project 1", selectedTechArray)}
           </article>
         </section>
         <section ref={aboutRef} id="about">
