@@ -1,6 +1,6 @@
 import { Button } from "../components/Button";
 //Function that returns an array of buttons matching que type parameter
-export const techButtons = (techType, addOrRemoveTech) => {
+export const techButtons = (techType, addOrRemoveTech, selectedTechArray) => {
   return Technologies.filter((tech) => {
     return tech.Type === techType;
   }).map((filteredTech) => {
@@ -8,6 +8,7 @@ export const techButtons = (techType, addOrRemoveTech) => {
       <Button
         key={`${filteredTech.Name}-${filteredTech.Type}`}
         text={filteredTech.Name}
+        gradient={determineGradient(selectedTechArray, [filteredTech.Name])}
         onClick={(e) => {
           e.target.className
             ? (e.target.className = "")
@@ -42,7 +43,7 @@ export const projectsButton = (projectName, selectedTechArray) => {
   }).map((filteredProject) => {
     return (
       <Button
-        key={`${filteredProject.Name}-${filteredProject.reason}`}
+        key={`${filteredProject.Name}-${filteredProject.Reason}`}
         text={filteredProject.Name}
         gradient={determineGradient(selectedTechArray, filteredProject.Tech)}
       />
@@ -52,11 +53,25 @@ export const projectsButton = (projectName, selectedTechArray) => {
 
 export const Projects = [
   {
-    Name: "Project 1",
-    Tech: ["Js", "HTML", "CSS", "FIGMA", "C, C#, C++"],
-    Reason: "A reason",
+    Name: "Another BookStore Ecommerce",
+    Tech: [
+      "Js",
+      "HTML",
+      "CSS",
+      "React",
+      "Firebase",
+      "Sass",
+      "Mui",
+      "Vercel",
+      "SPA",
+    ],
+    Reason: "Final project of the CoderHouse React",
     Things: {
-      Learned: ["better this", "how to that", "the reason for"],
+      Learned: [
+        "Developing a React App from scratch",
+        "Routing",
+        "the reason for",
+      ],
       ToImprove: [
         "Better layout and responsive practices with grid",
         "Project folder structuring",
@@ -74,19 +89,64 @@ export const Projects = [
     },
   },
   {
-    tech: ["Js", "HTML", "CSS"],
-    reason: "A reason 2",
-    things: {
-      learned: ["better this 2", "how to that 2", "the reason for 2"],
-      toImprove: [
+    Name: "Project 2",
+    Tech: ["Js", "HTML", "CSS"],
+    Reason: "A reason 2",
+    Things: {
+      Learned: ["better this 2", "how to that 2", "the reason for 2"],
+      ToImprove: [
         "Better layout and responsive practices with grid 2",
         "Project folder structuring 2",
       ],
-      toDo: [
+      ToDo: [
         "Remake with a better overall theme specification design system and ideas 2",
       ],
     },
-    takeAway:
+    TakeAway:
+      "I remade a nodeJs portfolio in react, my code improved vastly, i better understand the pros and cons of React and responsiveness. 2",
+    Links: {
+      Github: "https://github.com/link2",
+      Vercel: "https://vercel.com/link2",
+      Glitch: "https://glitch.com/link2",
+    },
+  },
+  {
+    Name: "Project 2",
+    Tech: ["Js", "HTML", "CSS"],
+    Reason: "A reason 2",
+    Things: {
+      Learned: ["better this 2", "how to that 2", "the reason for 2"],
+      ToImprove: [
+        "Better layout and responsive practices with grid 2",
+        "Project folder structuring 2",
+      ],
+      ToDo: [
+        "Remake with a better overall theme specification design system and ideas 2",
+      ],
+    },
+    TakeAway:
+      "I remade a nodeJs portfolio in react, my code improved vastly, i better understand the pros and cons of React and responsiveness. 2",
+    Links: {
+      Github: "https://github.com/link2",
+      Vercel: "https://vercel.com/link2",
+      Glitch: "https://glitch.com/link2",
+    },
+  },
+  {
+    Name: "Project 2",
+    Tech: ["Js", "HTML", "CSS"],
+    Reason: "A reason 2",
+    Things: {
+      Learned: ["better this 2", "how to that 2", "the reason for 2"],
+      ToImprove: [
+        "Better layout and responsive practices with grid 2",
+        "Project folder structuring 2",
+      ],
+      ToDo: [
+        "Remake with a better overall theme specification design system and ideas 2",
+      ],
+    },
+    TakeAway:
       "I remade a nodeJs portfolio in react, my code improved vastly, i better understand the pros and cons of React and responsiveness. 2",
     Links: {
       Github: "https://github.com/link2",
@@ -113,31 +173,31 @@ export const Courses = [
   },
   {
     ID: 2,
-    name: "course 2",
-    institution: "codecademy 2",
-    tech: ["Js", "HTML", "CSS"],
-    things: {
+    Name: "Course 2",
+    Institution: "codecademy 2",
+    Tech: ["Js", "HTML", "CSS", "Figma"],
+    Things: {
       learned: ["better this 2", "how to that 2", "the reason for 2"],
       achieved: ["coding knowledge 2", "a project to show 2"],
       toDo: [
         "Remake with a better overall theme specification design system and ideas 2",
       ],
     },
-    takeAway: "I learned how to code 2",
+    TakeAway: "I learned how to code 2",
   },
   {
     ID: 3,
-    name: "course 3",
-    institution: "codecademy 3",
-    tech: ["Js", "HTML", "CSS"],
-    things: {
-      learned: ["better this 3", "how to that 3", "the reason for 3"],
-      achieved: ["coding knowledge 3", "a project to show 3"],
-      toDo: [
+    Name: "Course 3",
+    Institution: "codecademy 3",
+    Tech: ["Js", "HTML", "CSS"],
+    Things: {
+      Learned: ["better this 3", "how to that 3", "the reason for 3"],
+      Achieved: ["coding knowledge 3", "a project to show 3"],
+      ToDo: [
         "Remake with a better overall theme specification design system and ideas 3",
       ],
     },
-    takeAway: "I learned how to code 2",
+    TakeAway: "I learned how to code 2",
   },
 ];
 
@@ -169,12 +229,16 @@ export const Technologies = [
     Type: "Lib",
   },
   {
-    Name: "Semantic UI",
+    Name: "Mui",
     Type: "Lib",
   },
   //Cloud
   {
     Name: "Vercel",
+    Type: "Cloud",
+  },
+  {
+    Name: "Firebase",
     Type: "Cloud",
   },
   {
@@ -202,6 +266,10 @@ export const Technologies = [
     Name: "OOP",
     Type: "Principles",
   },
+  {
+    Name: "SPA",
+    Type: "Principles",
+  },
   //WebDev
   {
     Name: "Figma",
@@ -213,6 +281,10 @@ export const Technologies = [
   },
   {
     Name: "HTML",
+    Type: "WebDev",
+  },
+  {
+    Name: "Sass",
     Type: "WebDev",
   },
   //Project Management
@@ -250,21 +322,17 @@ export const Technologies = [
 ];
 
 const determineGradient = (selectedTechArray, courseTechArray) => {
-  //  console.dir(Array.from(selectedTechSet));
   const containsAll = courseTechArray?.every((element) => {
     return selectedTechArray?.indexOf(element) !== -1;
   });
 
   if (containsAll) {
-    // console.dir("100%");
     return 100;
   } else {
     let count = 0;
     for (const tech of selectedTechArray) {
       if (courseTechArray?.includes(tech)) count++;
     }
-    //  console.dir(`${(count / courseTechArray?.length) * 100}%`);
-
     return (count / courseTechArray?.length) * 100;
   }
 };
