@@ -22,7 +22,12 @@ export const techButtons = (techType, addOrRemoveTech, selectedTechArray) => {
 };
 
 //Function that returns an array of buttons matching que type parameter
-export const coursesButton = (courseName, selectedTechArray, handleModal) => {
+export const coursesButton = (
+  courseName,
+  selectedTechArray,
+  handleModal,
+  setModalData
+) => {
   return Courses.filter((course) => {
     return course.Name === courseName;
   }).map((filteredCourse) => {
@@ -31,14 +36,22 @@ export const coursesButton = (courseName, selectedTechArray, handleModal) => {
         key={`${filteredCourse.Name}-${filteredCourse.Institution}`}
         text={filteredCourse.Name}
         gradient={determineGradient(selectedTechArray, filteredCourse.Tech)}
-        onClick={() => handleModal()}
+        onClick={() => {
+          handleModal();
+          setModalData(filteredCourse);
+        }}
       />
     );
   });
 };
 
 //Function that returns an array of buttons matching que type parameter
-export const projectsButton = (projectName, selectedTechArray, handleModal) => {
+export const projectsButton = (
+  projectName,
+  selectedTechArray,
+  handleModal,
+  setModalData
+) => {
   return Projects.filter((project) => {
     return project.Name === projectName;
   }).map((filteredProject) => {
@@ -47,7 +60,10 @@ export const projectsButton = (projectName, selectedTechArray, handleModal) => {
         key={`${filteredProject.Name}-${filteredProject.Reason}`}
         text={filteredProject.Name}
         gradient={determineGradient(selectedTechArray, filteredProject.Tech)}
-        onClick={() => handleModal()}
+        onClick={() => {
+          handleModal();
+          setModalData(filteredProject);
+        }}
       />
     );
   });

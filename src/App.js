@@ -23,7 +23,9 @@ function App() {
 
   const [currentSection, setCurrentSection] = useState("landing");
   const [selectedTechArray, setSelectedTechArray] = useState([]);
+
   const [modalIsOpened, setModalIsOpened] = useState(false);
+  const [modalData, setModalData] = useState();
 
   const addOrRemoveTech = (selectedTech) => {
     if (selectedTechArray.includes(selectedTech)) {
@@ -61,7 +63,9 @@ function App() {
 
   return (
     <>
-      {modalIsOpened && <Popover handleModal={handleModal} />}
+      {modalIsOpened && (
+        <Popover modalData={modalData} handleModal={handleModal} />
+      )}
       <aside id="asideRight">
         <div id="verticalBar"></div>
         <a
@@ -156,16 +160,37 @@ function App() {
           </article>
           <article id="coursesAndProjects">
             <h4>Courses</h4>
-            {coursesButton("Course 1", selectedTechArray, handleModal)}
-            {coursesButton("Course 2", selectedTechArray, handleModal)}
-            {coursesButton("Course 3", selectedTechArray, handleModal)}
+            {coursesButton(
+              "Course 1",
+              selectedTechArray,
+              handleModal,
+              setModalData
+            )}
+            {coursesButton(
+              "Course 2",
+              selectedTechArray,
+              handleModal,
+              setModalData
+            )}
+            {coursesButton(
+              "Course 3",
+              selectedTechArray,
+              handleModal,
+              setModalData
+            )}
             <h4>Projects</h4>
             {projectsButton(
               "Another BookStore Ecommerce",
               selectedTechArray,
-              handleModal
+              handleModal,
+              setModalData
             )}
-            {projectsButton("Project 2", selectedTechArray, handleModal)}
+            {projectsButton(
+              "Project 2",
+              selectedTechArray,
+              handleModal,
+              setModalData
+            )}
           </article>
         </section>
         <section ref={aboutRef} id="about">
