@@ -22,7 +22,7 @@ export const techButtons = (techType, addOrRemoveTech, selectedTechArray) => {
 };
 
 //Function that returns an array of buttons matching que type parameter
-export const coursesButton = (courseName, selectedTechArray) => {
+export const coursesButton = (courseName, selectedTechArray, handleModal) => {
   return Courses.filter((course) => {
     return course.Name === courseName;
   }).map((filteredCourse) => {
@@ -31,13 +31,14 @@ export const coursesButton = (courseName, selectedTechArray) => {
         key={`${filteredCourse.Name}-${filteredCourse.Institution}`}
         text={filteredCourse.Name}
         gradient={determineGradient(selectedTechArray, filteredCourse.Tech)}
+        onClick={() => handleModal()}
       />
     );
   });
 };
 
 //Function that returns an array of buttons matching que type parameter
-export const projectsButton = (projectName, selectedTechArray) => {
+export const projectsButton = (projectName, selectedTechArray, handleModal) => {
   return Projects.filter((project) => {
     return project.Name === projectName;
   }).map((filteredProject) => {
@@ -46,6 +47,7 @@ export const projectsButton = (projectName, selectedTechArray) => {
         key={`${filteredProject.Name}-${filteredProject.Reason}`}
         text={filteredProject.Name}
         gradient={determineGradient(selectedTechArray, filteredProject.Tech)}
+        onClick={() => handleModal()}
       />
     );
   });
@@ -65,7 +67,7 @@ export const Projects = [
       "Vercel",
       "SPA",
     ],
-    Reason: "Final project of the CoderHouse React",
+    Reason: "Final project of the CoderHouse React course",
     Things: {
       Learned: [
         "Developing a React App from scratch",
@@ -87,27 +89,8 @@ export const Projects = [
       Vercel: "https://vercel.com/link",
       Glitch: "https://glitch.com/link",
     },
-  },
-  {
-    Name: "Project 2",
-    Tech: ["Js", "HTML", "CSS"],
-    Reason: "A reason 2",
-    Things: {
-      Learned: ["better this 2", "how to that 2", "the reason for 2"],
-      ToImprove: [
-        "Better layout and responsive practices with grid 2",
-        "Project folder structuring 2",
-      ],
-      ToDo: [
-        "Remake with a better overall theme specification design system and ideas 2",
-      ],
-    },
-    TakeAway:
-      "I remade a nodeJs portfolio in react, my code improved vastly, i better understand the pros and cons of React and responsiveness. 2",
-    Links: {
-      Github: "https://github.com/link2",
-      Vercel: "https://vercel.com/link2",
-      Glitch: "https://glitch.com/link2",
+    MainLink: function () {
+      return this.Links.Vercel;
     },
   },
   {
@@ -131,9 +114,12 @@ export const Projects = [
       Vercel: "https://vercel.com/link2",
       Glitch: "https://glitch.com/link2",
     },
+    MainLink: function () {
+      return this.Links.Github;
+    },
   },
   {
-    Name: "Project 2",
+    Name: "Project 3",
     Tech: ["Js", "HTML", "CSS"],
     Reason: "A reason 2",
     Things: {
@@ -152,6 +138,34 @@ export const Projects = [
       Github: "https://github.com/link2",
       Vercel: "https://vercel.com/link2",
       Glitch: "https://glitch.com/link2",
+    },
+    MainLink: function () {
+      return this.Links.Glitch;
+    },
+  },
+  {
+    Name: "Project 4",
+    Tech: ["Js", "HTML", "CSS"],
+    Reason: "A reason 2",
+    Things: {
+      Learned: ["better this 2", "how to that 2", "the reason for 2"],
+      ToImprove: [
+        "Better layout and responsive practices with grid 2",
+        "Project folder structuring 2",
+      ],
+      ToDo: [
+        "Remake with a better overall theme specification design system and ideas 2",
+      ],
+    },
+    TakeAway:
+      "I remade a nodeJs portfolio in react, my code improved vastly, i better understand the pros and cons of React and responsiveness. 2",
+    Links: {
+      Github: "https://github.com/link2",
+      Vercel: "https://vercel.com/link2",
+      Glitch: "https://glitch.com/link2",
+    },
+    MainLink: function () {
+      return this.Links.Github;
     },
   },
 ];

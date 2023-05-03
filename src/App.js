@@ -3,7 +3,13 @@ import "./App.css";
 import giphy from "./assets/gifs/giphy.gif";
 import { ProjectCard } from "./components/ProjectCard";
 import { TypewriterLine } from "./components/TypewriterLine";
-import { Projects, techButtons, coursesButton, projectsButton } from "./data/data";
+import { Popover } from "./components/Popover";
+import {
+  Projects,
+  techButtons,
+  coursesButton,
+  projectsButton,
+} from "./data/data";
 
 function App() {
   const landingRef = createRef();
@@ -17,6 +23,7 @@ function App() {
 
   const [currentSection, setCurrentSection] = useState("landing");
   const [selectedTechArray, setSelectedTechArray] = useState([]);
+  const [modalIsOpened, setModalIsOpened] = useState(false);
 
   const addOrRemoveTech = (selectedTech) => {
     if (selectedTechArray.includes(selectedTech)) {
@@ -33,6 +40,10 @@ function App() {
     }
   };
 
+  const handleModal = () => {
+    console.dir("Is modal opened?" + !modalIsOpened);
+    setModalIsOpened(!modalIsOpened);
+  };
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -50,6 +61,7 @@ function App() {
 
   return (
     <>
+      {modalIsOpened && <Popover handleModal={handleModal} />}
       <aside id="asideRight">
         <div id="verticalBar"></div>
         <a
@@ -107,10 +119,13 @@ function App() {
         </section>
         <section ref={projectsRef} id="projects">
           <h1>Selected Projects</h1>
-          {/* Fine for mocking, remember to use a valid key and to use some kind of data structure*/}
-          {Projects.map((value, index) => {
+          {Projects.map((data, index) => {
             return (
-              <ProjectCard key={index + 1} projectId={index + 1}>
+              <ProjectCard
+                key={index + 1}
+                projectId={index + 1}
+                projectData={data}
+              >
                 {index + 1}
               </ProjectCard>
             );
@@ -121,28 +136,36 @@ function App() {
             <h4>Languages</h4>
             {techButtons("Lang", addOrRemoveTech, selectedTechArray)}
             <h4>Frameworks &amp; Libraries</h4>
-            {techButtons("Lib", addOrRemoveTech,selectedTechArray)}
+            {techButtons("Lib", addOrRemoveTech, selectedTechArray)}
             <h4>Cloud</h4>
-            {techButtons("Cloud", addOrRemoveTech,selectedTechArray)}
+            {techButtons("Cloud", addOrRemoveTech, selectedTechArray)}
             <h4>Principles</h4>
-            {techButtons("Principles", addOrRemoveTech,selectedTechArray)}
+            {techButtons("Principles", addOrRemoveTech, selectedTechArray)}
             <h4>Web Dev</h4>
-            {techButtons("WebDev", addOrRemoveTech,selectedTechArray)}
+            {techButtons("WebDev", addOrRemoveTech, selectedTechArray)}
             <h4>DBMS</h4>
-            {techButtons("DBMS", addOrRemoveTech,selectedTechArray)}
+            {techButtons("DBMS", addOrRemoveTech, selectedTechArray)}
             <h4>ORM</h4>
-            {techButtons("ORM", addOrRemoveTech,selectedTechArray)}
+            {techButtons("ORM", addOrRemoveTech, selectedTechArray)}
             <h4>Project Management</h4>
-            {techButtons("Project Management", addOrRemoveTech,selectedTechArray)}
+            {techButtons(
+              "Project Management",
+              addOrRemoveTech,
+              selectedTechArray
+            )}
           </article>
           <article id="coursesAndProjects">
             <h4>Courses</h4>
-            {coursesButton("Course 1", selectedTechArray)}
-            {coursesButton("Course 2", selectedTechArray)}
-            {coursesButton("Course 3", selectedTechArray)}
+            {coursesButton("Course 1", selectedTechArray, handleModal)}
+            {coursesButton("Course 2", selectedTechArray, handleModal)}
+            {coursesButton("Course 3", selectedTechArray, handleModal)}
             <h4>Projects</h4>
-            {projectsButton("Another BookStore Ecommerce", selectedTechArray)}
-            {projectsButton("Project 2", selectedTechArray)}
+            {projectsButton(
+              "Another BookStore Ecommerce",
+              selectedTechArray,
+              handleModal
+            )}
+            {projectsButton("Project 2", selectedTechArray, handleModal)}
           </article>
         </section>
         <section ref={aboutRef} id="about">
