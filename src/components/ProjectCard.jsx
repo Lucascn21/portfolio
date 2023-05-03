@@ -1,13 +1,18 @@
-import './ProjectCard.css'
-export const ProjectCard = ({ projectId }) => {
+import "./ProjectCard.css";
+export const ProjectCard = ({ projectId, projectData }) => {
+ // console.dir(projectData);
   return (
     <article id={`project-${projectId}`} className="projectCard">
-      <a href={`#project-${projectId}`}>
-        <h3>Placeholder</h3>
+      <a href={projectData.MainLink()}>
+        <h3>{projectData.Name}</h3>
         <p>
-          <strong> NodeJs • MongoDB • React • Express </strong>
+          <strong>
+            {projectData.Tech.map((tech, index) => {
+              return `${index > 0 ? "|" : " "} ${tech} `;
+            })}
+          </strong>
         </p>
-        <p>Upcoming React Project.</p>
+        <p>{projectData.Reason}</p>
       </a>
     </article>
   );
