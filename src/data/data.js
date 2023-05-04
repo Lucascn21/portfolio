@@ -98,7 +98,7 @@ export const Projects = [
         "Remake with a better overall theme specification design system and ideas",
       ],
     },
-    Takeaway:
+    TakeAway:
       "I remade a nodeJs portfolio in react, my code improved vastly, i better understand the pros and cons of React and responsiveness. ",
     Links: {
       Github: "https://github.com/link",
@@ -207,9 +207,9 @@ export const Courses = [
     Institution: "codecademy 2",
     Tech: ["Js", "HTML", "CSS", "Figma"],
     Things: {
-      learned: ["better this 2", "how to that 2", "the reason for 2"],
-      achieved: ["coding knowledge 2", "a project to show 2"],
-      toDo: [
+      Learned: ["better this 2", "how to that 2", "the reason for 2"],
+      Achieved: ["coding knowledge 2", "a project to show 2"],
+      ToDo: [
         "Remake with a better overall theme specification design system and ideas 2",
       ],
     },

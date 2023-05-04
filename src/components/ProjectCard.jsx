@@ -1,6 +1,6 @@
 import "./ProjectCard.css";
 export const ProjectCard = ({ projectId, projectData }) => {
- // console.dir(projectData);
+  // console.dir(projectData);
   return (
     <article id={`project-${projectId}`} className="projectCard">
       <a href={projectData.MainLink()}>
