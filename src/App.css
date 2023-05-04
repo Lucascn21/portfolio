@@ -77,7 +77,7 @@ footer {
   text-align: center;
 }
 
-section {
+main > section {
   height: 100svh;
   height: 100dvh;
 }

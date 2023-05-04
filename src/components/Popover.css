@@ -1,4 +1,7 @@
 #popover {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% auto auto auto ; 
   position: fixed;
   justify-self: center;
   background: gray;
@@ -6,6 +9,11 @@
   width: 80%;
   height: 70%;
   z-index: 9;
+}
+
+#popover > section {
+  height: initial;
+  width: initial;
 }
 @keyframes fade-in {
   0% {
