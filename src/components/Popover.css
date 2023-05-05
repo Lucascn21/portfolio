@@ -1,20 +1,113 @@
 #popover {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 20% auto auto auto ; 
+
   position: fixed;
   justify-self: center;
-  background: gray;
+  background-color: rgb(59, 59, 59);
   top: 25%;
   width: 80%;
   height: 70%;
   z-index: 9;
+  max-height: 90dvh;
+  border: inset darkslateblue 1px;
+}
+@media (max-width: 75em) {
+  #popover {
+    width: 100%;
+    height: 75%;
+  }
+
+  #todo > ul {
+    margin: 0;
+  }
+}
+
+#modalHeader > h2 {
+  margin: 0;
+  color: #84defc;
+  line-height: 1.3;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+#popover > section > h3 {
+  font-size: 1rem;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
+  color: #4691f6;
 }
 
 #popover > section {
-  height: initial;
-  width: initial;
 }
+
+#popover > h3,
+h5,
+h4 {
+  margin: 0;
+}
+
+#things {
+  display: grid;
+  grid-template-areas:
+    "title title title"
+    "achievedOrToImprove learned todo";
+  grid-template-areas:
+    "title title title"
+    "achievedOrToImprove achievedOrToImprove achievedOrToImprove"
+    "learned learned learned"
+    "todo todo todo";
+  align-content: center;
+}
+#things > h3 {
+  justify-self: center;
+  align-self: center;
+  grid-area: title;
+}
+
+#things > h2 {
+  align-self: center;
+  grid-column: 1/4;
+}
+
+#things > section > h4 {
+  margin-top: 0.5rem;
+  text-align-last: center;
+}
+
+#achieved,
+#toimprove {
+  grid-area: achievedOrToImprove;
+}
+
+#learned {
+  grid-area: learned;
+}
+#todo {
+  grid-area: todo;
+  margin: 0;
+}
+
+#takeaway {
+  text-align: center;
+}
+
+#takeaway,
+#modalHeader {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+
+#takeaway > h2 {
+  border-bottom: inset 1px gray;
+}
+
+#modalHeader {
+  text-align: center;
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;

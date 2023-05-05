@@ -8,15 +8,15 @@ export const Popover = ({ modalData, handleModal }) => {
     <article onClick={() => handleModal()} id="popover">
       <section id="modalHeader">
         <h2>{modalData.Name}</h2>
-        <h3>{modalData.Institution}</h3>
         <h3>{modalData.Tech.map((tech) => ` ${tech} `)}</h3>
+        <p>{modalData.Institution || modalData.Reason}</p>
       </section>
       <section id="things">
-        <h3>Things</h3>
+        <h2>Things</h2>
         {modalData.Things.Achieved ? (
           <List section="Achieved" listData={modalData.Things.Achieved} />
         ) : (
-          <List section="To improve" listData={modalData.Things.ToImprove} />
+          <List section="Toimprove" listData={modalData.Things.ToImprove} />
         )}
 
         <List section="Learned" listData={modalData.Things.Learned} />
@@ -24,7 +24,7 @@ export const Popover = ({ modalData, handleModal }) => {
         <List section="ToDo" listData={modalData.Things.ToDo} />
       </section>
       <section id="takeaway">
-        <h5>Take Away</h5>
+        <h2>Take Away</h2>
         <p>{modalData.TakeAway}</p>
       </section>
     </article>

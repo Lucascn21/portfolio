@@ -70,7 +70,7 @@ main {
 }
 footer {
   width: fit-content;
-
+  opacity: 0.75;
   grid-area: footer;
   width: 100%;
   background-color: #333d45;
@@ -265,7 +265,7 @@ main > section {
 }
 @media (max-width: 75em) {
   #about > h3,
-  h4,
+  #about > h4,
   h2 {
     text-align: center;
     border-bottom: inset 1px gray;
@@ -320,6 +320,7 @@ span > p {
 #asideLeft {
   left: 0px;
   justify-content: flex-end;
+  opacity: 0.75;
 }
 #asideRight {
   right: 0px;
