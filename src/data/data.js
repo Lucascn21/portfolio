@@ -98,8 +98,11 @@ export const Projects = [
         "Remake with a better overall theme specification design system and ideas",
       ],
     },
-    TakeAway:
-      "I remade a nodeJs portfolio in react, my code improved vastly, i better understand the pros and cons of React and responsiveness. ",
+    TakeAway: [
+      "I remade a nodeJs portfolio in react",
+      "My code improved vastly",
+      "I better understand the pros and cons of React and responsiveness",
+    ],
     Links: {
       Github: "https://github.com/link",
       Vercel: "https://vercel.com/link",
@@ -123,8 +126,11 @@ export const Projects = [
         "Remake with a better overall theme specification design system and ideas 2",
       ],
     },
-    TakeAway:
-      "I remade a nodeJs portfolio in react, my code improved vastly, i better understand the pros and cons of React and responsiveness. 2",
+    TakeAway: [
+      "I remade a nodeJs portfolio in react",
+      "My code improved vastly",
+      "I better understand the pros and cons of React and responsiveness",
+    ],
     Links: {
       Github: "https://github.com/link2",
       Vercel: "https://vercel.com/link2",
@@ -148,8 +154,11 @@ export const Projects = [
         "Remake with a better overall theme specification design system and ideas 2",
       ],
     },
-    TakeAway:
-      "I remade a nodeJs portfolio in react, my code improved vastly, i better understand the pros and cons of React and responsiveness. 2",
+    TakeAway: [
+      "I remade a nodeJs portfolio in react",
+      "My code improved vastly",
+      "I better understand the pros and cons of React and responsiveness",
+    ],
     Links: {
       Github: "https://github.com/link2",
       Vercel: "https://vercel.com/link2",
@@ -173,8 +182,11 @@ export const Projects = [
         "Remake with a better overall theme specification design system and ideas 2",
       ],
     },
-    TakeAway:
-      "I remade a nodeJs portfolio in react, my code improved vastly, i better understand the pros and cons of React and responsiveness. 2",
+    TakeAway: [
+      "I remade a nodeJs portfolio in react",
+      "My code improved vastly",
+      "I better understand the pros and cons of React and responsiveness",
+    ],
     Links: {
       Github: "https://github.com/link2",
       Vercel: "https://vercel.com/link2",
@@ -199,7 +211,7 @@ export const Courses = [
         "Remake with a better overall theme specification design system and ideas",
       ],
     },
-    TakeAway: "I learned how to code ",
+    TakeAway: ["better this 3", "how to that 3", "the reason for 3"],
   },
   {
     ID: 2,
@@ -213,7 +225,7 @@ export const Courses = [
         "Remake with a better overall theme specification design system and ideas 2",
       ],
     },
-    TakeAway: "I learned how to code 2",
+    TakeAway: ["better this 3", "how to that 3", "the reason for 3"],
   },
   {
     ID: 3,
@@ -227,7 +239,7 @@ export const Courses = [
         "Remake with a better overall theme specification design system and ideas 3",
       ],
     },
-    TakeAway: "I learned how to code 2",
+    TakeAway: ["better this 3", "how to that 3", "the reason for 3"],
   },
 ];
 
