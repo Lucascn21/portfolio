@@ -3,7 +3,7 @@ export const ProjectCard = ({ projectId, projectData }) => {
   // console.dir(projectData);
   return (
     <article id={`project-${projectId}`} className="projectCard">
-      <a href={projectData.MainLink()}>
+      <a href={projectData.MainLink()} target="_blank" rel="noreferrer">
         <h3>{projectData.Name}</h3>
         <p>
           <strong>
