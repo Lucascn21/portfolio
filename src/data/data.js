@@ -104,40 +104,40 @@ export const Projects = [
       "I better understand the pros and cons of React and responsiveness",
     ],
     Links: {
-      Github: "https://github.com/link",
-      Vercel: "https://vercel.com/link",
-      Glitch: "https://glitch.com/link",
+      Github: "https://github.com/Lucascn21/ProyectoFinal-LGM-CODER",
+      Vercel: "https://proyecto-final-lgm-coder.vercel.app",
     },
     MainLink: function () {
       return this.Links.Vercel;
     },
   },
   {
-    Name: "Project 2",
-    Tech: ["Js", "HTML", "CSS"],
-    Reason: "A reason 2",
+    Name: "Alkemy Challenge",
+    Tech: ["Js", "HTML", "CSS", "React", "Vercel", "Tailwind", "Axios"],
+    Reason: "Alkemy's Challenge project",
     Things: {
-      Learned: ["better this 2", "how to that 2", "the reason for 2"],
+      Learned: [
+        "How tailwind works",
+        "Local/Session storage",
+        "Token Auth and Redirection",
+      ],
       ToImprove: [
         "Better layout and responsive practices with grid 2",
         "Project folder structuring 2",
       ],
-      ToDo: [
-        "Remake with a better overall theme specification design system and ideas 2",
-      ],
+      ToDo: ["A contact Form like the one i did in other courses and projects"],
     },
     TakeAway: [
-      "I remade a nodeJs portfolio in react",
-      "My code improved vastly",
-      "I better understand the pros and cons of React and responsiveness",
+      "I took this challenge as further React learning and practice ",
+      "Gained and understanding of token auth, route protecting and redirecting",
+      "Used Axios to fetch data",
     ],
     Links: {
-      Github: "https://github.com/link2",
-      Vercel: "https://vercel.com/link2",
-      Glitch: "https://glitch.com/link2",
+      Github: "https://github.com/Lucascn21/alkemy-thing",
+      Vercel: "https://alkemy-thing.vercel.app",
     },
     MainLink: function () {
-      return this.Links.Github;
+      return this.Links.Vercel;
     },
   },
   {

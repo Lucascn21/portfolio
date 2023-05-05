@@ -186,7 +186,7 @@ function App() {
               setModalData
             )}
             {projectsButton(
-              "Project 2",
+              "Alkemy Challenge",
               selectedTechArray,
               handleModal,
               setModalData
