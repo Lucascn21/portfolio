@@ -1,6 +1,5 @@
 #popover {
   display: grid;
-
   position: fixed;
   justify-self: center;
   background-color: rgb(59, 59, 59);
@@ -10,6 +9,10 @@
   z-index: 9;
   max-height: 90dvh;
   border: inset darkslateblue 1px;
+  overflow-y: auto;
+}
+body:has(.requires-no-scroll) {
+  overflow: hidden;
 }
 @media (max-width: 75em) {
   #popover {
@@ -17,8 +20,9 @@
     height: 75%;
   }
 
-  #todo > ul {
+  #things > * > ul {
     margin: 0;
+    max-width: 85%;
   }
 }
 
@@ -37,9 +41,22 @@
   letter-spacing: 1.25px;
   text-transform: uppercase;
   color: #4691f6;
+  scroll-behavior: unset;
 }
 
-#popover > section {
+#popoverBg {
+  position: fixed;
+  z-index: 5;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: #000000;
+  opacity: 0.85;
+}
+#popoverBgText {
+  position: relative;
+  top: 15dvh;
+  z-index: 11;
+  text-align: center;
 }
 
 #popover > h3,
@@ -58,7 +75,7 @@ h4 {
     "achievedOrToImprove achievedOrToImprove achievedOrToImprove"
     "learned learned learned"
     "todo todo todo";
-  align-content: center;
+  place-content: center;
 }
 #things > h3 {
   justify-self: center;
@@ -73,7 +90,7 @@ h4 {
 
 #things > section > h4 {
   margin-top: 0.5rem;
-  text-align-last: center;
+  text-align: center;
 }
 
 #achieved,

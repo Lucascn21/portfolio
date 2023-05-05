@@ -68,6 +68,7 @@ main {
   margin-left: clamp(10%, 20%, 25%);
   margin-right: clamp(10%, 20%, 25%);
 }
+
 footer {
   width: fit-content;
   opacity: 0.75;
@@ -266,7 +267,7 @@ main > section {
 @media (max-width: 75em) {
   #about > h3,
   #about > h4,
-  h2 {
+  #about > h2 {
     text-align: center;
     border-bottom: inset 1px gray;
   }
