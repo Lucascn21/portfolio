@@ -8,17 +8,17 @@
 
 body {
   font-family: var(--ff-sans-serif);
-  /*
-  font-weight: 200;
-  font-size: 1.3125rem;
-  line-height: 1.6;
-  */
+  font-family: system-ui;
+  font-weight: 450;
+  font-size: 1.1rem;
   margin: 0;
   color: white;
 }
 @media (max-width: 75em) {
   body {
-    font-size: initial;
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.6;
   }
 }
 
@@ -88,16 +88,20 @@ main > section {
 #landing {
   display: flex;
   align-items: center;
-  justify-items: center;
 }
 
 @media (max-width: 75em) {
   #landing {
     flex-wrap: wrap-reverse;
+    align-content: space-evenly;
+    padding-top: 2.5rem;
   }
   main {
     margin-left: 10%;
     margin-right: 10%;
+  }
+  section {
+    padding-top: 3rem;
   }
 }
 #landingAsideText {
@@ -248,7 +252,7 @@ main > section {
 }
 #skillsSection > * > h4 {
   border-bottom: 1px solid whitesmoke;
-  margin: 0;
+  margin-top: 0;
 }
 
 #skills {
@@ -341,7 +345,7 @@ aside {
 }
 
 aside > a {
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.5rem;
   margin-top: 1rem;
 }
 

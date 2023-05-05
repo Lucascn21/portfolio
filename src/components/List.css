@@ -1,16 +1,18 @@
 .todo {
-  list-style-type: "🛠️";
+  list-style-type: "🛠️ ";
 }
 .learned {
-  list-style-type: "👓";
+  list-style-type: "👓 ";
 }
 .achieved {
-  list-style-type: "🎖️";
+  list-style-type: "🎖️ ";
 }
 .toimprove {
-  list-style-type: "📐";
+  list-style-type: "📐 ";
 }
 
 .takeaway {
-  list-style-type: "⚡";
+  list-style-type: "⚡ ";
+  margin-top: 0.3rem;
+  padding-bottom: 0.3rem;
 }
