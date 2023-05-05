@@ -1,19 +1,24 @@
 import React from "react";
-import "./Popover.css";
+import "./Modal.css";
 import { List } from "./List";
-export const Popover = ({ modalData, handleModal }) => {
+export const Modal = ({ modalData, handleModal }) => {
   console.dir(modalData);
 
   return (
     <>
-      <div id="popoverBg" onClick={() => handleModal()}>
-        <p id="popoverBgText">Click/Tap here to go back</p>
+      <div id="modalBg" onClick={() => handleModal()}>
+        <p id="modalBgText">Click / Tap here to go back</p>
       </div>
-      <article id="popover" className="requires-no-scroll">
+      <article id="modal" className="requires-no-scroll">
         <section id="modalHeader">
           <h2>{modalData.Name}</h2>
-          <h3>{modalData.Tech.map((tech) => ` ${tech} `)}</h3>
-          <p>{modalData.Institution || modalData.Reason}</p>
+
+          <h3>
+            {modalData.Tech.map((tech, index) => {
+              return `${index > 0 ? "|" : " "} ${tech} `;
+            })}
+          </h3>
+          <p className="italic">{modalData.Institution || modalData.Reason}</p>
         </section>
         <section id="things">
           <h2>Things</h2>
@@ -27,10 +32,8 @@ export const Popover = ({ modalData, handleModal }) => {
 
           <List section="ToDo" listData={modalData.Things.ToDo} />
         </section>
-        <section id="takeaway">
-          <h2>Take Away</h2>
-          <p>{modalData.TakeAway}</p>
-        </section>
+
+        <List section="takeaway" listData={modalData.TakeAway} />
       </article>
     </>
   );

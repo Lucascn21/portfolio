@@ -3,7 +3,7 @@ import "./App.css";
 import giphy from "./assets/gifs/giphy.gif";
 import { ProjectCard } from "./components/ProjectCard";
 import { TypewriterLine } from "./components/TypewriterLine";
-import { Popover } from "./components/Popover";
+import { Modal } from "./components/Modal";
 import {
   Projects,
   techButtons,
@@ -64,7 +64,7 @@ function App() {
   return (
     <>
       {modalIsOpened && (
-        <Popover modalData={modalData} handleModal={handleModal} />
+        <Modal modalData={modalData} handleModal={handleModal} />
       )}
       <aside id="asideRight">
         <div id="verticalBar"></div>
