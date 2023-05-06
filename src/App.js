@@ -43,7 +43,6 @@ function App() {
   };
 
   const handleModal = () => {
-    console.dir("Is modal opened?" + !modalIsOpened);
     setModalIsOpened(!modalIsOpened);
   };
   useEffect(() => {
@@ -53,7 +52,7 @@ function App() {
           setCurrentSection(entry.target.id);
         });
       },
-      { threshold: [0.53, 0.75, 1] }
+      { threshold: [0.35, 0.65, 0.85] }
     );
     observer.observe(landingRef?.current);
     observer.observe(projectsRef?.current);
