@@ -2,8 +2,6 @@ import React from "react";
 import "./Modal.css";
 import { List } from "./List";
 export const Modal = ({ modalData, handleModal }) => {
-  console.dir(modalData);
-
   return (
     <>
       <div id="modalBg" onClick={() => handleModal()}>
@@ -15,7 +13,9 @@ export const Modal = ({ modalData, handleModal }) => {
 
           <h3>
             {modalData.Tech.map((tech, index) => {
-              return `${index > 0 ? "|" : " "} ${tech} `;
+              return index !== modalData.Tech.length - 1
+                ? tech.padEnd(tech.length + 4, " | ")
+                : tech;
             })}
           </h3>
           <p className="italic">{modalData.Institution || modalData.Reason}</p>
@@ -34,6 +34,20 @@ export const Modal = ({ modalData, handleModal }) => {
         </section>
 
         <List section="takeaway" listData={modalData.TakeAway} />
+        {modalData.Links && (
+          <section id="links">
+            <h2>Links</h2>
+            <h4 id="modalLinks">
+              {Object.entries(modalData?.Links).map((link) => {
+                return (
+                  <a key={link[1]} href={link[1]}>
+                    {link[0]}
+                  </a>
+                );
+              })}
+            </h4>
+          </section>
+        )}
       </article>
     </>
   );

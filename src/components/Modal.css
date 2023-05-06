@@ -42,7 +42,7 @@ body:has(.requires-no-scroll) {
   letter-spacing: 1.25px;
   text-transform: uppercase;
   color: #4691f6;
-  scroll-behavior: unset;
+  /*scroll-behavior: unset;*/
 }
 
 #modalBg {
@@ -115,7 +115,29 @@ body:has(.requires-no-scroll) {
 #modalHeader {
   display: grid;
 }
+#modalLinks {
+  display: flex;
+  text-align: center;
+}
+#modalLinks > a {
+  background-color: #33383d;
+  width: 100%;
+  border: inset darkslateblue 2px;
+}
+/*Scrollbar*/
+#modal::-webkit-scrollbar {
+  width: 3px;
+}
 
+#modal::-webkit-scrollbar-track {
+  background: transparent;
+  padding: 50px;
+}
+
+#modal::-webkit-scrollbar-thumb {
+  background-color: orange;
+}
+/*Scrollbar*/
 @keyframes fade-in {
   0% {
     opacity: 0;
