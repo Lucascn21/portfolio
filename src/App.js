@@ -52,7 +52,7 @@ function App() {
           setCurrentSection(entry.target.id);
         });
       },
-      { threshold: [0.45, 0.85, 0.95, 0.85] }
+      { threshold: [0.45, 0.85, 0.95, 0.45] }
     );
     observer.observe(landingRef?.current);
     observer.observe(projectsRef?.current);
