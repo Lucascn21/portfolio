@@ -226,6 +226,11 @@ export const Courses = [
       ],
     },
     TakeAway: ["better this 3", "how to that 3", "the reason for 3"],
+    Links: {
+      Github: "https://github.com/link2",
+      Vercel: "https://vercel.com/link2",
+      Glitch: "https://glitch.com/link2",
+    },
   },
   {
     ID: 3,
@@ -240,6 +245,11 @@ export const Courses = [
       ],
     },
     TakeAway: ["better this 3", "how to that 3", "the reason for 3"],
+    Links: {
+      Github: "https://github.com/link2",
+      Vercel: "https://vercel.com/link2",
+      Glitch: "https://glitch.com/link2",
+    },
   },
 ];
 
