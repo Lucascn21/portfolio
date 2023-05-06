@@ -1,6 +1,5 @@
 import "./List.css";
 export const List = ({ section, listData }) => {
-  console.dir(listData);
   return (
     <section id={section.toLowerCase()}>
       {section === "takeaway" ? (
