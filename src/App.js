@@ -52,7 +52,7 @@ function App() {
           setCurrentSection(entry.target.id);
         });
       },
-      { threshold: [0.45, 0.85, 0.95, 0.45] }
+      { threshold: [0.85, 0.75, 0.45, 0.25] }
     );
     observer.observe(landingRef?.current);
     observer.observe(projectsRef?.current);
@@ -204,13 +204,13 @@ function App() {
           <article id="coursesAndProjects">
             <h4>Courses</h4>
             {coursesButton(
-              "Course 1",
+              "React Js - Coderhouse",
               selectedTechArray,
               handleModal,
               setModalData
             )}
             {coursesButton(
-              "Course 2",
+              "Node Js - ComIT",
               selectedTechArray,
               handleModal,
               setModalData

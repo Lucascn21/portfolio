@@ -8,7 +8,7 @@ export const techButtons = (techType, addOrRemoveTech, selectedTechArray) => {
       <Button
         key={`${filteredTech.Name}-${filteredTech.Type}`}
         text={filteredTech.Name}
-        gradient={determineGradient(selectedTechArray, [filteredTech.Name])}
+        gradient={0}
         onClick={(e) => {
           e.target.className
             ? (e.target.className = "")
@@ -201,31 +201,72 @@ export const Projects = [
 export const Courses = [
   {
     ID: 1,
-    Name: "Course 1",
+    Name: "React Js - Coderhouse",
     Institution: "Coderhouse",
-    Tech: ["Js", "HTML", "CSS"],
+    Tech: ["Js", "HTML", "CSS", "React", "Vercel", "Firebase", "Git"],
     Things: {
-      Learned: ["better this", "how to that", "the reason for"],
-      Achieved: ["coding knowledge", "a project to show"],
-      ToDo: [
-        "Remake with a better overall theme specification design system and ideas",
+      Learned: [
+        "Basic to intermediate React.",
+        "How to use Firebase.",
+        "How to deploy to Vercel.",
       ],
+      Achieved: ["A deployed project in Vercel.", "Top 10% of the class."],
+      ToDo: ["Keep learning and improving."],
     },
-    TakeAway: ["better this 3", "how to that 3", "the reason for 3"],
+    TakeAway: [
+      "I took this course after realizing it would be best to have some guidance on my first steps with React.",
+      "React is very javascript-driven, its approach makes a lot of sense to me.",
+      "React was important for me because it combines the good of server-side rendering without its downsides.",
+      <p>
+        I am now comfortable
+        <a
+          target="_blank"
+          href="https://react.dev/learn/thinking-in-react"
+          rel="noreferrer"
+        >
+          Thinking in React.
+        </a>
+      </p>,
+    ],
   },
   {
     ID: 2,
-    Name: "Course 2",
-    Institution: "codecademy 2",
-    Tech: ["Js", "HTML", "CSS", "Figma"],
+    Name: "Node Js - ComIT",
+    Institution: "ComunidadIT",
+    Tech: [
+      "Js",
+      "HTML",
+      "CSS",
+      "NodeJs",
+      "Axios",
+      "Bootstrap",
+      "MongoDB",
+      "Mongo Atlas",
+      "ExpressJs",
+      "Ejs",
+      "Sass",
+      "Git",
+    ],
     Things: {
-      Learned: ["better this 2", "how to that 2", "the reason for 2"],
-      Achieved: ["coding knowledge 2", "a project to show 2"],
+      Learned: [
+        "Basic Javascript",
+        "Basic to intermediate NodeJs",
+        "Basic Web Development",
+        "Server-side rendering",
+      ],
+      Achieved: [
+        "An understanding of what front and backend actually mean",
+        "A fullstack project",
+      ],
       ToDo: [
-        "Remake with a better overall theme specification design system and ideas 2",
+        "Remake with a much improved React frontend, and way cleaner code in every aspect",
       ],
     },
-    TakeAway: ["better this 3", "how to that 3", "the reason for 3"],
+    TakeAway: [
+      "This was my first formal course with Javascript, Web Development and NodeJs.",
+      "This is where i decided to become a Fullstack Developer, with Js as my main language",
+      "I found out i really like Web Development and Js, the backend in particular",
+    ],
     Links: {
       Github: "https://github.com/link2",
       Vercel: "https://vercel.com/link2",
