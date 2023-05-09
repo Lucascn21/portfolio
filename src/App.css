@@ -13,9 +13,11 @@ body {
   font-size: 1.1rem;
   margin: 0;
   color: white;
+  background-color: #0a0b0c;
 }
 @media (max-width: 75em) {
   body {
+    overflow: hidden;
     font-weight: 300;
     font-size: 1.2rem;
     line-height: 1.6;
@@ -104,6 +106,17 @@ main > section {
     padding-top: 3rem;
   }
 }
+
+@media (max-width: 75em) and (orientation: landscape) {
+  #landing {
+    padding-top:15%
+  }
+
+  section {
+    margin-top: 10%;
+  }
+}
+
 #landingAsideText {
   display: inline-flex;
   color: #4691f6 !important;
@@ -328,7 +341,12 @@ span > p {
   opacity: 0.75;
 }
 #asideRight {
-  right: 0px;
+  right: 1.5rem;
+}
+@media (max-width: 75em) {
+  #asideRight {
+    right: 0;
+  }
 }
 
 /*Nav stuff*/
@@ -389,3 +407,22 @@ svg {
   border-bottom: 1px orange solid;
 }
 /*Nav stuff*/
+
+/*ScrollBar stuff*/
+body {
+  overflow: overlay;
+}
+body::-webkit-scrollbar {
+  width: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+  background: transparent;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #4e4e4e;
+}
+/*ScrollBar stuff*/
