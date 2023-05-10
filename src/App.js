@@ -49,7 +49,7 @@ function App() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setCurrentSection(entry.target.id);
+          entry.isIntersecting && setCurrentSection(entry.target.id);
         });
       },
       { threshold: [0.85, 0.75, 0.45, 0.25] }
@@ -58,7 +58,7 @@ function App() {
     observer.observe(projectsRef?.current);
     observer.observe(skillsSectionRef?.current);
     observer.observe(aboutRef?.current);
-  }, []);
+  }, [landingRef, projectsRef, skillsSectionRef, aboutRef]);
 
   return (
     <>
