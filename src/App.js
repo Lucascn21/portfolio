@@ -46,6 +46,8 @@ function App() {
     setModalIsOpened(!modalIsOpened);
   };
   useEffect(() => {
+    modalIsOpened &&
+      document.addEventListener("keydown", () => setModalIsOpened(false));
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -58,7 +60,7 @@ function App() {
     observer.observe(projectsRef?.current);
     observer.observe(skillsSectionRef?.current);
     observer.observe(aboutRef?.current);
-  }, [landingRef, projectsRef, skillsSectionRef, aboutRef]);
+  }, [modalIsOpened, landingRef, projectsRef, skillsSectionRef, aboutRef]);
 
   return (
     <>
@@ -210,13 +212,13 @@ function App() {
               setModalData
             )}
             {coursesButton(
-              "Node Js - ComIT",
+              "NodeJs - ComIT",
               selectedTechArray,
               handleModal,
               setModalData
             )}
             {coursesButton(
-              "Course 3",
+              "Miriadax",
               selectedTechArray,
               handleModal,
               setModalData
