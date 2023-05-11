@@ -4,7 +4,9 @@ export const ProjectCard = ({ projectId, projectData }) => {
     <article id={`project-${projectId}`} className="projectCard">
       <a
         href={projectData.MainLink()}
-        onClick={projectData.portfolioClick && projectData.portfolioClick}
+        onClick={
+          projectData.projectModalToggle && projectData.projectModalToggle
+        }
         target="_blank"
         rel="noreferrer"
       >

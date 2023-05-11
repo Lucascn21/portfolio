@@ -71,6 +71,7 @@ export const projectsButton = (
 
 export const Projects = [
   {
+    ID: 0,
     Name: "Another BookStore Ecommerce",
     Tech: [
       "Js",
@@ -82,8 +83,9 @@ export const Projects = [
       "Mui",
       "Vercel",
       "SPA",
+      "Git",
     ],
-    Reason: "Final project of the CoderHouse React course",
+    Reason: "My Final Project for CoderHouse's React Course",
     Things: {
       Learned: ["Developing a React App from scratch.", "Routing."],
       ToImprove: [
@@ -108,9 +110,10 @@ export const Projects = [
     },
   },
   {
+    ID: 1,
     Name: "Alkemy Challenge",
-    Tech: ["Js", "HTML", "CSS", "React", "Vercel", "Tailwind", "Axios"],
-    Reason: "Alkemy's Challenge project",
+    Tech: ["Js", "HTML", "CSS", "React", "Vercel", "Tailwind", "Axios", "Git"],
+    Reason: "Alkemy's Challenge Project",
     Things: {
       Learned: [
         "How tailwind works.",
@@ -134,9 +137,10 @@ export const Projects = [
     },
   },
   {
+    ID: 2,
     Name: "Tic Tac Toe",
-    Tech: ["Js", "HTML", "CSS", "React"],
-    Reason: "A step-by-step project from the React documentation.",
+    Tech: ["Js", "HTML", "CSS", "React", "Git"],
+    Reason: "A guided project from React's documentation.",
     Things: {
       Learned: [
         "Honed the fundamentals of React: Components, Props, and State.",
@@ -162,9 +166,10 @@ export const Projects = [
     },
   },
   {
+    ID: 3,
     Name: "This Portfolio",
-    Tech: ["Js", "HTML", "CSS", "React"],
-    Reason: "My portfolio presentation.",
+    Tech: ["Js", "HTML", "CSS", "React", "Git"],
+    Reason: "My Portfolio Presentation.",
     Things: {
       Learned: [
         "I need to add some backend projects to my portfolio.",
@@ -184,15 +189,15 @@ export const Projects = [
     TakeAway: [
       "This is a remake of an old portfolio which was a Server-Rendered NodeJs App.",
       "I needed a better way to show my projects, skillset and a little bit of who i am.",
-      "The projects and courses data is exported from a file, which makes it easier to edit and mantain, i will structure my data way better on my next portfolio version.",
+      "The projects and courses data is exported from a file, which makes it easier to edit and mantain, as i learned quite a bit, i will structure my data way better from now on.",
       "As soon as i felt comfortable with React, i made this project as the first big step in the search of my dream job.",
     ],
     MainLink: function () {
       return undefined;
     },
-    portfolioClick: () =>
+    projectModalToggle: () =>
       [...document.querySelectorAll("button")]
-        .find((btn) => btn.textContent.includes("This Portfolio"))
+        .find((btn) => btn.textContent.includes(Projects[3].Name))
         .click(),
   },
 ];
@@ -217,7 +222,7 @@ export const Courses = [
       "React is very javascript-driven, its approach makes a lot of sense to me.",
       "React was important for me because it combines the good of server-side rendering without its downsides.",
       <p>
-        I am now comfortable
+        I am now comfortable{" "}
         <a
           target="_blank"
           href="https://react.dev/learn/thinking-in-react"
@@ -277,6 +282,24 @@ export const Courses = [
   },
   {
     ID: 3,
+    Name: "Agile Methodologies: Scrum",
+    Institution: "ComunidadIT - Grupo Humannova",
+    Tech: ["Scrum", "Agile Methodologies"],
+    Things: {
+      Learned: ["What is Scrum.", "Importance and benefits of Scrum."],
+      Achieved: [
+        "An understanding of what Agile Methodologies, Scrum in particular.",
+        "A very fruitful workshop.",
+      ],
+      ToDo: ["Keep studying Agile Methodologies, they are great."],
+    },
+    TakeAway: [
+      "This was my first approach to modern, flexible and responsible methodologies, it left quite an impression in me.",
+      ".",
+    ],
+  },
+  {
+    ID: 4,
     Name: "Miriadax",
     Institution: "Telefónica",
     Tech: [
@@ -291,6 +314,8 @@ export const Courses = [
       "Ejs",
       "Sequelize",
       "SQL",
+      "Netlify",
+      "Git",
     ],
     Things: {
       Learned: [
@@ -313,6 +338,65 @@ export const Courses = [
     ],
     Links: {
       Miriadax: "https://miriadax.net/curso/itinerario-fullstack/",
+    },
+  },
+  {
+    ID: 5,
+    Name: "Web Dev - Fundación Carlos Slim",
+    Institution: "Fundación Carlos Slim",
+    Tech: ["Js", "HTML", "CSS", "MVC"],
+    Things: {
+      Learned: [
+        "Basic Frontend and Backend concepts",
+        "Basic Web Development.",
+        "Basic Cookies Management.",
+        "Basic Session Management.",
+        "MVC pattern",
+      ],
+      Achieved: [
+        "Successfully completed a set of Frontend and Backend courses.",
+      ],
+      ToDo: [
+        "Keep doing courses, completing learning paths, in order to earn at least one diploma.",
+      ],
+    },
+    TakeAway: [
+      "I adquired and strengthened my grip on what Web Development is.",
+      "This is one of my day-to-day course platforms to keep a constant learning and interest.",
+      "This site is a very underrated resource that started very simple and basic, nowadays it has mildly advanced courses and an extensive catalogue",
+    ],
+    Links: {
+      Site: "https://capacitateparaelempleo.org",
+      "Diploma to Achieve":
+        "https://capacitateparaelempleo.org/interna-diplomado/26",
+    },
+  },
+  {
+    ID: 6,
+    Name: "Java - Codo A Codo",
+    Institution: "GCBA",
+    Tech: ["Java", "OOP", "SQL", "MySQL"],
+    Things: {
+      Learned: [
+        "Basic Programming knowledge and concepts.",
+        "Basic Java.",
+        "Basic SQL.",
+      ],
+      Achieved: [
+        "Successfully completed the course.",
+        "Earned a certificate by the INET.",
+        "Developed a Calculator and a CRUD api.",
+      ],
+      ToDo: [
+        "Keep doing courses, completing learning paths, in order to earn at least one diploma.",
+      ],
+    },
+    TakeAway: [
+      "This was my first and formal attempt to learn how to code.",
+      "We went from pseudocode and algorithms, all the way up to Java and SQL.",
+    ],
+    Links: {
+      Site: "https://agenciadeaprendizaje.bue.edu.ar/codo-a-codo/",
     },
   },
 ];
@@ -386,6 +470,7 @@ export const Technologies = [
     Name: "SPA",
     Type: "Principles",
   },
+
   //WebDev
   {
     Name: "Figma",
@@ -409,10 +494,6 @@ export const Technologies = [
     Type: "Project Management",
   },
   {
-    Name: "GitHub",
-    Type: "Project Management",
-  },
-  {
     Name: "Scrum",
     Type: "Project Management",
   },
@@ -420,7 +501,7 @@ export const Technologies = [
     Name: "Trello",
     Type: "Project Management",
   },
-
+  { Name: "Agile Methodologies", Type: "Project Management" },
   //DBMS
   {
     Name: "MongoDB",
