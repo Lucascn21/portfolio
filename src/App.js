@@ -236,6 +236,18 @@ function App() {
               handleModal,
               setModalData
             )}
+            {projectsButton(
+              "Tic Tac Toe",
+              selectedTechArray,
+              handleModal,
+              setModalData
+            )}
+            {projectsButton(
+              "This Portfolio",
+              selectedTechArray,
+              handleModal,
+              setModalData
+            )}
           </article>
         </section>
         <section ref={aboutRef} id="about">
