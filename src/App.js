@@ -1,6 +1,6 @@
 import { createRef, useEffect, useState } from "react";
 import "./App.css";
-import giphy from "./assets/gifs/giphy.gif";
+import giphy from "./assets/gifs/giphy5.gif";
 import { ProjectCard } from "./components/ProjectCard";
 import { TypewriterLine } from "./components/TypewriterLine";
 import { Modal } from "./components/Modal";
@@ -223,6 +223,19 @@ function App() {
               handleModal,
               setModalData
             )}
+            {coursesButton(
+              "Web Dev - Fundación Carlos Slim",
+              selectedTechArray,
+              handleModal,
+              setModalData
+            )}
+            {coursesButton(
+              "Java - Codo A Codo",
+              selectedTechArray,
+              handleModal,
+              setModalData
+            )}
+
             <h4>Projects</h4>
             {projectsButton(
               "Another BookStore Ecommerce",
