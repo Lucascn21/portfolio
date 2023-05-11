@@ -109,7 +109,7 @@ main > section {
 
 @media (max-width: 75em) and (orientation: landscape) {
   #landing {
-    padding-top:15%
+    padding-top: 15%;
   }
 
   section {
@@ -280,6 +280,7 @@ main > section {
   max-width: 100svw;
   word-wrap: break-word;
   height: fit-content;
+  padding-bottom: 5%;
 }
 @media (max-width: 75em) {
   #about > h3,
