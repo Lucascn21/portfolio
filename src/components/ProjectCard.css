@@ -19,6 +19,9 @@
   display: flex;
   justify-content: center;
 }
+.projectCard > a:hover {
+  cursor: pointer;
+}
 
 .projectCard > a > h3 {
   margin: 0;
