@@ -16,7 +16,7 @@ export const techButtons = (techType, addOrRemoveTech) => {
 
           addOrRemoveTech(filteredTech.Name);
         }}
-        isInProgress={techType == "In Progress"}
+        isInProgress={techType === "In Progress"}
       />
     );
   });

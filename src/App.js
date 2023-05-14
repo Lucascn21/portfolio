@@ -1,6 +1,6 @@
 import { createRef, useEffect, useState } from "react";
 import "./App.css";
-import giphy from "./assets/gifs/giphy5.gif";
+import introGif from "./assets/gifs/catGif.gif";
 import { ProjectCard } from "./components/ProjectCard";
 import { TypewriterLine } from "./components/TypewriterLine";
 import { Modal } from "./components/Modal";
@@ -163,7 +163,7 @@ function App() {
             </div>
           </article>
           <article id="gifArea">
-            <img src={giphy} alt="loading..." />
+            <img src={introGif} alt="loading..." />
           </article>
         </section>
         <section ref={projectsRef} id="projects">

@@ -40,7 +40,12 @@ export const Modal = ({ modalData, handleModal }) => {
             <h4 id="modalLinks">
               {Object.entries(modalData?.Links).map((link) => {
                 return (
-                  <a key={link[1]} href={link[1]}>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    key={link[1]}
+                    href={link[1]}
+                  >
                     {link[0]}
                   </a>
                 );

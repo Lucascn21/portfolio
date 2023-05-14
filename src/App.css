@@ -1,6 +1,4 @@
 :root {
-  --ff-primary: "Heebo", sans-serif;
-  --ff-accent: "Playfair Display", serif;
   --ff-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -41,7 +39,6 @@ html {
     " main"
     " footer";
   grid-template-columns: auto;
-  z-index: -1;
   background-image: url("./assets/backgrounds/16245680689844.png");
   background-position: right bottom, left top;
   background-repeat: no-repeat, repeat;
@@ -308,7 +305,7 @@ h2 {
 
 #about > h2 {
   text-align: center;
-  border-bottom: outset 5px #5dcbcb;
+  border-bottom: outset 5px #ffffff;
 }
 #about > p {
   word-wrap: break-word;
