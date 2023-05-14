@@ -16,6 +16,7 @@ export const techButtons = (techType, addOrRemoveTech) => {
 
           addOrRemoveTech(filteredTech.Name);
         }}
+        isInProgress={techType == "In Progress"}
       />
     );
   });
@@ -282,9 +283,9 @@ export const Courses = [
   },
   {
     ID: 3,
-    Name: "Agile Methodologies: Scrum",
+    Name: "Scrum - ComIt",
     Institution: "ComunidadIT - Grupo Humannova",
-    Tech: ["Scrum", "Agile Methodologies"],
+    Tech: ["Scrum", "Agile Methodologies", "Trello"],
     Things: {
       Learned: ["What is Scrum.", "Importance and benefits of Scrum."],
       Achieved: [
@@ -295,7 +296,7 @@ export const Courses = [
     },
     TakeAway: [
       "This was my first approach to modern, flexible and responsible methodologies, it left quite an impression in me.",
-      ".",
+      "This experience changed my perspective on how to organize and work.",
     ],
   },
   {
@@ -344,7 +345,7 @@ export const Courses = [
     ID: 5,
     Name: "Web Dev - Fundación Carlos Slim",
     Institution: "Fundación Carlos Slim",
-    Tech: ["Js", "HTML", "CSS", "MVC"],
+    Tech: ["Js", "HTML", "CSS", "MVC", "Git"],
     Things: {
       Learned: [
         "Basic Frontend and Backend concepts",
@@ -406,7 +407,6 @@ export const Technologies = [
   { Name: "Js", Type: "Lang" },
   { Name: "SQL", Type: "Lang" },
   { Name: "Java", Type: "Lang" },
-  { Name: "C, C#, C++", Type: "Lang" },
   //Node/Frameworks/Libs
   {
     Name: "NodeJs",
@@ -455,10 +455,6 @@ export const Technologies = [
     Type: "Principles",
   },
   {
-    Name: "REST",
-    Type: "Principles",
-  },
-  {
     Name: "MVC",
     Type: "Principles",
   },
@@ -472,10 +468,6 @@ export const Technologies = [
   },
 
   //WebDev
-  {
-    Name: "Figma",
-    Type: "WebDev",
-  },
   {
     Name: "CSS",
     Type: "WebDev",
@@ -515,6 +507,15 @@ export const Technologies = [
   {
     Name: "Sequelize",
     Type: "ORM",
+  },
+  //In Progress
+  {
+    Name: "REST",
+    Type: "In Progress",
+  },
+  {
+    Name: "Figma",
+    Type: "In Progress",
   },
 ];
 

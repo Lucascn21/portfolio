@@ -168,8 +168,11 @@ main > section {
 }
 
 #projects > h1 {
-  text-align: center;
   grid-area: title;
+}
+#projects > h1,
+#skillsSection > h1 {
+  text-align: center;
   border-bottom: 2px solid darkgrey;
 }
 
@@ -213,6 +216,10 @@ main > section {
 #skillsSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "skillsTitle skillsTitle"
+    "skills coursesAndProjects";
+  grid-template-rows: 5% auto;
 }
 #skillsSection > * > button {
   color: #fff;
@@ -222,6 +229,10 @@ main > section {
 
 #skillsSection > * > button:hover {
   background-color: #04aa6d !important;
+}
+
+#skillsTitle {
+  grid-area: skillsTitle;
 }
 /* Green */
 .success {
@@ -238,13 +249,6 @@ main > section {
   padding: 4px 10px;
   margin: 4px;
   cursor: pointer;
-  /*
-  background: linear-gradient(
-    to right,
-    rgb(73, 140, 82) 20%,
-    rgb(37, 37, 48) 50%
-  );
-  */
 }
 #skillsSection > #skills > button {
   text-align: center;
@@ -264,12 +268,18 @@ main > section {
   }
 }
 #skillsSection > * > h4 {
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid rgb(158, 157, 157);
   margin-top: 0;
 }
 
 #skills {
-  border-right: 1px solid whitesmoke;
+  padding-right: 5%;
+  border-right: 1px solid darkgrey;
+}
+
+#coursesAndProjects {
+  border-left: 1px solid darkgrey;
+  padding-left: 5%;
 }
 
 /*Skills stuff*/

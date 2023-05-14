@@ -180,12 +180,19 @@ function App() {
             );
           })}
         </section>
+
         <section ref={skillsSectionRef} id="skillsSection">
+          <h1 id="skillsTitle">Skills</h1>
           <article id="skills">
             <h4>Languages</h4>
             {techButtons("Lang", addOrRemoveTech, selectedTechArray)}
-            <h4>Frameworks &amp; Libraries</h4>
+            <h4>Frameworks, Libraries &amp; Enviroments </h4>
             {techButtons("Lib", addOrRemoveTech, selectedTechArray)}
+            {techButtons(
+              "Runtime Enviroment",
+              addOrRemoveTech,
+              selectedTechArray
+            )}
             <h4>Cloud</h4>
             {techButtons("Cloud", addOrRemoveTech, selectedTechArray)}
             <h4>Principles</h4>
@@ -202,6 +209,8 @@ function App() {
               addOrRemoveTech,
               selectedTechArray
             )}
+            <h4>In Progress</h4>
+            {techButtons("In Progress", addOrRemoveTech, selectedTechArray)}
           </article>
           <article id="coursesAndProjects">
             <h4>Courses</h4>
@@ -231,6 +240,12 @@ function App() {
             )}
             {coursesButton(
               "Java - Codo A Codo",
+              selectedTechArray,
+              handleModal,
+              setModalData
+            )}
+            {coursesButton(
+              "Scrum - ComIt",
               selectedTechArray,
               handleModal,
               setModalData
