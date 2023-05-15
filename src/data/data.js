@@ -178,7 +178,7 @@ export const Projects = [
         "Important React and Js features such as State, Map, Conditional Rendering and Modern Js.",
       ],
       ToImprove: [
-        "The order in which i started coding my Ux wasnt the best, but thats know-how that comes with practice.",
+        "The order in which i started coding my UX wasnt the best, but thats know-how that comes with practice.",
         "Basically, my frontend skillset, from UX/UI, responsiveness, to modern-simpler CSS.",
       ],
       ToDo: [
@@ -386,7 +386,7 @@ export const Courses = [
       Achieved: [
         "Successfully completed the course.",
         "Earned a certificate by the INET.",
-        "Developed a Calculator and a CRUD api.",
+        "Developed a Calculator and a CRUD API.",
       ],
       ToDo: [
         "Keep doing courses, completing learning paths, in order to earn at least one diploma.",

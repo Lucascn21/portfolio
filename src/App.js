@@ -292,7 +292,7 @@ function App() {
           <h3>Adolescence</h3>
           <p>
             This is when i first approached to coding
-            <span className="italic">(C++ & SQL)</span>, while learning how to
+            <span className="italic"> (C++ & SQL)</span>, while learning how to
             use game server frameworks. I've also taken a deeper interest in
             hardware and eventually built my first custom pc.
           </p>
@@ -300,7 +300,7 @@ function App() {
           <p>
             <span className="italic">
               This is where i realized and decided that i am going to be a
-              developer.&nbsp;
+              developer.&nbsp; <br />
             </span>
             I got a part-time position into the Human Resources department, as a
             Consultant. I took part in modernizing the department's practices.
@@ -321,7 +321,7 @@ function App() {
               I got the curiosity and resourcefulness that i believe are key
               towards learning and improvement.
               <br />
-              I am currently learning React.
+              I am on my path of becoming a Fullstack developer.
               <br />
               I have very good analytical abilites, i really enjoy solving
               problems and helping others.
